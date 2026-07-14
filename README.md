@@ -71,7 +71,7 @@ If you choose another filename, update both PDF links in `index.html`.
 
 Place a professional portrait or project screenshots in `assets/images/`. Use lowercase, descriptive filenames without spaces, such as `peter-headshot.jpg` or `ubuntu-home-lab.png`.
 
-To replace the hero placeholder, add an `<img>` element inside the `.profile-placeholder` area in `index.html`, give it useful alternative text, and add styling in `css/style.css`. Project cards include comments showing where future screenshot, GitHub, or case-study links can be added.
+The hero currently uses a CSS-styled `PER` monogram. To replace it with a portrait later, add an `<img>` element inside the `.profile-monogram` area in `index.html`, give it useful alternative text, and add styling in `css/style.css`. Project cards include comments showing where future screenshot, GitHub, or case-study links can be added.
 
 Before publishing images, resize and compress them so the site stays fast. Avoid including sensitive information in screenshots.
 

@@ -47,9 +47,12 @@
             <a class="button button-text" href="#contact">Contact Me <span aria-hidden="true">→</span></a>
           </div>
         </div>
-        <div class="profile-placeholder" role="img" aria-label="Professional portrait placeholder for Peter Evans-Ramos">
-          <div class="profile-initials" aria-hidden="true">PER</div>
-          <p>Professional photo<br><span>coming soon</span></p>
+        <div class="profile-monogram" role="img" aria-label="PER monogram for Peter Evans-Ramos">
+          <div class="monogram-frame" aria-hidden="true">
+            <span class="monogram-corner monogram-corner-top"></span>
+            <span class="profile-initials">PER</span>
+            <span class="monogram-corner monogram-corner-bottom"></span>
+          </div>
           <div class="orbit orbit-one" aria-hidden="true"></div>
           <div class="orbit orbit-two" aria-hidden="true"></div>
         </div>
@@ -96,8 +99,12 @@
           <article class="card skill-card">
             <span class="card-number" aria-hidden="true">04</span>
             <h3>Tools &amp; Technologies</h3>
-            <ul class="tag-list" aria-label="Tools and technologies">
-              <li>Git</li><li>GitHub <small>learning</small></li><li>Ubuntu</li><li>Docker <small>learning</small></li><li>Wazuh <small>learning</small></li><li>Wireshark</li><li>Microsoft 365</li>
+            <ul class="tag-list" aria-label="Current tools and technologies">
+              <li>Git</li><li>GitHub</li><li>Ubuntu</li><li>Wireshark</li><li>Microsoft 365</li>
+            </ul>
+            <p class="tool-group-label">Currently Learning</p>
+            <ul class="tag-list learning-list" aria-label="Technologies currently learning">
+              <li>Docker</li><li>Wazuh</li>
             </ul>
           </article>
         </div>
@@ -109,9 +116,11 @@
         <p class="section-kicker">03 / Credentials</p>
         <h2 id="certifications-title">Certifications</h2>
         <div class="cert-grid">
-          <article class="cert-card"><span class="cert-icon" aria-hidden="true">A+</span><div><p>CompTIA</p><h3>A+</h3></div></article>
-          <article class="cert-card"><span class="cert-icon" aria-hidden="true">N+</span><div><p>CompTIA</p><h3>Network+</h3></div></article>
-          <article class="cert-card"><span class="cert-icon" aria-hidden="true">S+</span><div><p>CompTIA</p><h3>Security+</h3></div></article>
+          <article class="cert-card"><span class="cert-icon" aria-hidden="true">A+</span><div><p>CompTIA</p><h3>A+</h3><span class="cert-validity">Valid through 2029</span></div></article>
+          <article class="cert-card"><span class="cert-icon" aria-hidden="true">N+</span><div><p>CompTIA</p><h3>Network+</h3><span class="cert-validity">Valid through 2029</span></div></article>
+          <article class="cert-card"><span class="cert-icon" aria-hidden="true">S+</span><div><p>CompTIA</p><h3>Security+</h3><span class="cert-validity">Valid through 2029</span></div></article>
+          <article class="cert-card"><span class="cert-icon" aria-hidden="true">P+</span><div><p>CompTIA</p><h3>Project+</h3><span class="cert-validity">Valid through 2029</span></div></article>
+          <article class="cert-card"><span class="cert-icon" aria-hidden="true">IT</span><div><p>ITIL</p><h3>ITIL Foundation</h3><span class="cert-validity">Valid through 2028</span></div></article>
           <article class="cert-card"><span class="cert-icon cert-icon-wide" aria-hidden="true">PA</span><div><p>Palo Alto Networks</p><h3>Cybersecurity Foundation</h3></div></article>
           <article class="cert-card"><span class="cert-icon cert-icon-wide" aria-hidden="true">PA</span><div><p>Palo Alto Networks</p><h3>CyberOps Associate</h3></div></article>
         </div>
@@ -141,7 +150,7 @@
           <article class="timeline-item">
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="experience-heading">
-              <div><h3>Uptime Support Senior Specialist</h3><p>Volvo Group North America</p></div>
+              <div><h3>Uptime Support Senior Specialist</h3><p>Volvo Group North America <span class="experience-location">Greensboro, NC</span></p></div>
               <p class="experience-date">November 2023 – Present</p>
             </div>
             <ul class="check-list">
@@ -156,7 +165,7 @@
           <article class="timeline-item">
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="experience-heading">
-              <div><h3>Uptime Support Specialist</h3><p>Volvo Group</p></div>
+              <div><h3>Uptime Support Specialist</h3><p>Volvo Group North America <span class="experience-location">Greensboro, NC</span></p></div>
               <p class="experience-date">July 2021 – November 2023</p>
             </div>
             <ul class="check-list">
@@ -170,7 +179,7 @@
           <article class="timeline-item">
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="experience-heading">
-              <div><h3>Claims Call Center Specialist</h3><p>National General Insurance</p></div>
+              <div><h3>Claims Call Center Specialist</h3><p>National General Insurance <span class="experience-location">Winston-Salem, NC</span></p></div>
               <p class="experience-date">January 2018 – May 2021</p>
             </div>
             <ul class="check-list">
@@ -185,7 +194,7 @@
 
     <section class="section section-alt" id="projects" aria-labelledby="projects-title">
       <div class="container reveal">
-        <p class="section-kicker">06 / Hands-on Learning</p>
+        <p class="section-kicker">06 / Technical Projects</p>
         <h2 id="projects-title">Projects</h2>
         <p class="section-intro">Labs and planned builds designed to turn coursework into practical, documented experience.</p>
         <div class="card-grid project-grid">
@@ -227,9 +236,9 @@
 
     <section class="section section-alt contact-section" id="contact" aria-labelledby="contact-title">
       <div class="container contact-layout reveal">
-        <div><p class="section-kicker">07 / Connect</p><h2 id="contact-title">Let’s start a conversation.</h2><p>I’m interested in IT support, service desk, SOC, and cybersecurity analyst opportunities. If my background fits what your team needs, I’d be glad to connect.</p><a class="button button-primary" href="mailto:Ramosp816@gmail.com">Email Peter</a></div>
+        <div><p class="section-kicker">07 / Connect</p><h2 id="contact-title">Let’s start a conversation.</h2><p>I’m interested in IT support, service desk, SOC, and cybersecurity analyst opportunities. If my background fits what your team needs, I’d be glad to connect.</p><a class="button button-primary" href="mailto:ramosp816@gmail.com">Email Me</a></div>
         <address class="contact-list">
-          <a href="mailto:Ramosp816@gmail.com"><span>Email</span><strong>Ramosp816@gmail.com</strong></a>
+          <a href="mailto:ramosp816@gmail.com"><span>Email</span><strong>ramosp816@gmail.com</strong></a>
           <a href="https://www.linkedin.com/in/peterevansramos/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>peterevansramos</strong></a>
           <a href="https://github.com/Peterevansramos" target="_blank" rel="noopener noreferrer"><span>GitHub</span><strong>Peterevansramos</strong></a>
         </address>
