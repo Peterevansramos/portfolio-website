@@ -202,11 +202,7 @@
             <div class="project-top"><span class="project-index">01</span></div>
             <h3>Digital Forensics Investigation</h3>
             <ul class="tech-list" aria-label="Digital Forensics Investigation tools"><li>Autopsy</li><li>FTK Imager</li><li>Volatility</li></ul>
-            <ul class="project-details">
-              <li>Conducted digital forensic investigations using Autopsy, FTK Imager, and Volatility to analyze Windows evidence.</li>
-              <li>Recovered deleted files, browser history, user activity, and system artifacts.</li>
-              <li>Produced investigation reports documenting findings while maintaining forensic integrity.</li>
-            </ul>
+            <button class="button button-secondary project-view-button" id="open-forensics-project" type="button">View Project</button>
           </article>
           <article class="card project-card">
             <div class="project-top"><span class="project-index">02</span></div>
@@ -271,6 +267,74 @@
         </div>
       </div>
     </section>
+
+    <dialog class="project-modal" id="digital-forensics-project" aria-labelledby="forensics-modal-title">
+      <button class="modal-close project-modal-close" type="button" aria-label="Close Digital Forensics Investigation project">×</button>
+      <div class="project-modal-content">
+        <p class="section-kicker">Featured Project</p>
+        <h2 id="forensics-modal-title">Digital Forensics Investigation</h2>
+        <dl class="forensics-facts" aria-label="Investigation details">
+          <div><dt>Investigation Type</dt><dd>Windows workstation forensic analysis</dd></div>
+          <div><dt>Evidence Reviewed</dt><dd>10 forensic artifacts</dd></div>
+          <div><dt>Tools</dt><dd>Autopsy, FTK Imager, Volatility</dd></div>
+        </dl>
+        <p class="project-summary">Conducted a forensic investigation of a Windows disk image using Autopsy, FTK Imager, and Volatility. Verified evidence integrity with cryptographic hashes, analyzed user artifacts, recovered deleted evidence, and documented findings using standard digital forensic methodology.</p>
+        <ul class="project-details">
+          <li>Recovered deleted files, browser history, user activity, and system artifacts while maintaining forensic integrity.</li>
+          <li>Verified forensic evidence using cryptographic hash validation.</li>
+          <li>Documented findings in a professional digital forensic investigation report.</li>
+        </ul>
+        <section class="forensics-skills" aria-labelledby="forensics-skills-title">
+          <h3 id="forensics-skills-title">Key Skills Demonstrated</h3>
+          <ul class="forensics-skill-list">
+            <li>Digital Forensics</li>
+            <li>Evidence Preservation</li>
+            <li>File System Analysis</li>
+            <li>Browser Artifact Analysis</li>
+            <li>Windows Event Log Review</li>
+            <li>Chain of Custody</li>
+            <li>Technical Report Writing</li>
+          </ul>
+        </section>
+        <div class="forensics-gallery" aria-label="Digital forensics investigation screenshots">
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="assets/images/projects/digital-forensics/hash-verification.png" data-alt="Cryptographic hash values used to verify the integrity of the forensic disk image" data-caption="Hash Verification — Verified forensic image integrity before analysis." aria-label="Open larger image: Hash Verification">
+                  <img src="assets/images/projects/digital-forensics/hash-verification.png" alt="Cryptographic hash values used to verify the integrity of the forensic disk image" width="1092" height="978" loading="lazy">
+                </button>
+                <figcaption><strong>Hash Verification</strong><span>Verified forensic image integrity before analysis.</span></figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="assets/images/projects/digital-forensics/autopsy-case.png" data-alt="Windows forensic disk image loaded into an Autopsy investigation case" data-caption="Autopsy Investigation — Loaded the forensic disk image into Autopsy for examination." aria-label="Open larger image: Autopsy Investigation">
+                  <img src="assets/images/projects/digital-forensics/autopsy-case.png" alt="Windows forensic disk image loaded into an Autopsy investigation case" width="1004" height="906" loading="lazy">
+                </button>
+                <figcaption><strong>Autopsy Investigation</strong><span>Loaded the forensic disk image into Autopsy for examination.</span></figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="assets/images/projects/digital-forensics/downloads-analysis.png" data-alt="User directories, downloaded files, and system artifacts displayed for review" data-caption="Artifact Review — Reviewed user directories, downloaded files, and system artifacts during the investigation." aria-label="Open larger image: Artifact Review">
+                  <img src="assets/images/projects/digital-forensics/downloads-analysis.png" alt="User directories, downloaded files, and system artifacts displayed for review" width="1288" height="882" loading="lazy">
+                </button>
+                <figcaption><strong>Artifact Review</strong><span>Reviewed user directories, downloaded files, and system artifacts during the investigation.</span></figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <button class="gallery-trigger" type="button" data-image="assets/images/projects/digital-forensics/recovered-evidence.png" data-alt="Recovered files and relevant user artifacts documented during the forensic investigation" data-caption="Recovered Evidence — Identified and documented recovered files and user artifacts relevant to the investigation." aria-label="Open larger image: Recovered Evidence">
+                  <img src="assets/images/projects/digital-forensics/recovered-evidence.png" alt="Recovered files and relevant user artifacts documented during the forensic investigation" width="1220" height="918" loading="lazy">
+                </button>
+                <figcaption><strong>Recovered Evidence</strong><span>Identified and documented recovered files and user artifacts relevant to the investigation.</span></figcaption>
+              </figure>
+        </div>
+        <p class="gallery-note">Screenshots are from a simulated academic forensic investigation. Identifying information has been removed or sanitized.</p>
+      </div>
+    </dialog>
+
+    <dialog class="image-lightbox" id="digital-forensics-lightbox" aria-labelledby="lightbox-caption">
+      <div class="lightbox-content">
+        <button class="modal-close lightbox-close" type="button" aria-label="Close expanded image">×</button>
+        <figure>
+          <img class="lightbox-image" alt="">
+          <figcaption id="lightbox-caption"></figcaption>
+        </figure>
+      </div>
+    </dialog>
 
     <section class="section resume-section" id="resume" aria-labelledby="resume-title">
       <div class="container resume-callout reveal">

@@ -129,9 +129,41 @@ p { margin: 0 0 1.25rem; }
 .project-card .tech-list { margin: 0 0 1.4rem; }
 .tech-list li { border: 0; padding: 0; color: var(--blue-light); background: none; font-family: ui-monospace, monospace; font-size: .75rem; }
 .tech-list li:not(:last-child)::after { content: " /"; color: var(--slate-400); }
+.project-summary { max-width: 900px; margin-bottom: 1rem; color: var(--slate-200); }
 .project-details { flex: 1; margin: 0; padding: 0; list-style: none; }
 .project-details li { position: relative; padding: .38rem 0 .38rem 1.2rem; }
 .project-details li::before { content: "›"; position: absolute; left: 0; color: var(--cyan); font-weight: 900; }
+.project-view-button { align-self: flex-start; margin-top: auto; }
+.project-modal { width: min(96vw, 1280px); max-height: 94vh; padding: 0; overflow: hidden; border: 1px solid rgba(85,169,255,.4); border-radius: var(--radius); color: var(--white); background: var(--navy-900); box-shadow: 0 30px 90px rgba(0,0,0,.65); }
+.project-modal::backdrop, .image-lightbox::backdrop { background: rgba(2,7,14,.88); backdrop-filter: blur(6px); }
+.project-modal-content { position: relative; max-height: 94vh; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; padding: clamp(2rem, 5vw, 4rem); }
+.project-modal-content h2 { margin-bottom: 1rem; font-size: clamp(1.8rem, 4vw, 2.8rem); }
+.project-modal-content .project-details { max-width: 900px; }
+.forensics-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin: 0 0 1.5rem; overflow: hidden; border: 1px solid var(--border); border-radius: 12px; background: var(--border); }
+.forensics-facts div { padding: 1rem; background: rgba(5,13,24,.72); }
+.forensics-facts dt { margin-bottom: .35rem; color: var(--slate-400); font-size: .7rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.forensics-facts dd { margin: 0; color: var(--white); font-size: .9rem; line-height: 1.45; }
+.forensics-skills { margin-top: 1.75rem; }
+.forensics-skills h3 { margin-bottom: .85rem; font-size: 1.1rem; }
+.forensics-skill-list { display: flex; flex-wrap: wrap; gap: .55rem; margin: 0; padding: 0; list-style: none; }
+.forensics-skill-list li { padding: .45rem .7rem; border: 1px solid rgba(85,169,255,.28); border-radius: 999px; color: var(--blue-light); background: rgba(85,169,255,.07); font-size: .78rem; font-weight: 650; }
+.forensics-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.gallery-item { margin: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 12px; background: rgba(5,13,24,.4); }
+.gallery-trigger { display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; padding: 0; border: 0; color: inherit; background: var(--navy-950); cursor: zoom-in; }
+.gallery-trigger img { display: block; width: 100%; height: 100%; object-fit: contain; transition: transform .25s ease, opacity .25s ease; }
+.gallery-trigger:hover img { opacity: .9; transform: scale(1.015); }
+.gallery-item figcaption { display: grid; gap: .2rem; padding: .9rem 1rem 1rem; }
+.gallery-item figcaption strong { color: var(--white); font-size: .9rem; }
+.gallery-item figcaption span { color: var(--slate-400); font-size: .8rem; line-height: 1.5; }
+.gallery-note { margin: 1.25rem 0 0; color: var(--slate-400); font-size: .8rem; font-style: italic; }
+.modal-open { overflow: hidden; }
+.image-lightbox { width: min(94vw, 1180px); max-height: 92vh; padding: 0; overflow: visible; border: 1px solid rgba(85,169,255,.4); border-radius: var(--radius); color: var(--white); background: var(--navy-900); box-shadow: 0 30px 90px rgba(0,0,0,.65); }
+.lightbox-content { position: relative; padding: 2.75rem 1rem 1rem; }
+.lightbox-content figure { display: grid; gap: .8rem; margin: 0; }
+.lightbox-image { display: block; width: 100%; max-height: calc(92vh - 7rem); object-fit: contain; border-radius: 9px; background: var(--navy-950); }
+.lightbox-content figcaption { padding: 0 .25rem; color: var(--slate-200); text-align: center; }
+.modal-close { position: absolute; z-index: 2; top: .75rem; right: .85rem; display: grid; width: 2.35rem; aspect-ratio: 1; place-items: center; padding: 0; border: 1px solid var(--border); border-radius: 50%; color: var(--white); background: var(--navy-850); font-size: 1.45rem; line-height: 1; cursor: pointer; }
+.modal-close:hover { border-color: var(--blue); background: var(--navy-800); }
 .resume-section { padding-block: 5rem; }
 .resume-callout { display: flex; align-items: center; justify-content: space-between; gap: 3rem; padding: 3rem; border: 1px solid rgba(85,169,255,.32); border-radius: var(--radius); background: linear-gradient(120deg, rgba(85,169,255,.13), rgba(99,224,221,.035)); }
 .resume-callout h2 { margin-bottom: .65rem; font-size: clamp(2rem, 4vw, 3rem); }
@@ -176,6 +208,10 @@ p { margin: 0 0 1.25rem; }
   .profile-monogram { width: min(65vw, 280px); margin-inline: auto; aspect-ratio: 1; border-radius: 50%; }
   .monogram-frame { width: 8rem; }
   .skill-grid, .project-grid { grid-template-columns: 1fr; }
+  .forensics-gallery { grid-template-columns: 1fr; }
+  .forensics-facts { grid-template-columns: 1fr; }
+  .project-modal-content { padding: 3.5rem 1.25rem 1.5rem; }
+  .lightbox-content { padding-inline: .65rem; }
   .experience-heading, .resume-callout { align-items: flex-start; flex-direction: column; }
   .resume-callout { padding: 2rem; }
   .education-card { grid-template-columns: 85px 1fr; gap: 1.2rem; padding: 1.4rem; }

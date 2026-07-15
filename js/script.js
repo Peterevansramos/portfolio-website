@@ -71,3 +71,74 @@ if ('IntersectionObserver' in window) {
 
   trackedSections.forEach((section) => sectionObserver.observe(section));
 }
+
+const projectModal = document.querySelector('#digital-forensics-project');
+const projectModalOpen = document.querySelector('#open-forensics-project');
+const projectModalClose = projectModal?.querySelector('.project-modal-close');
+const lightbox = document.querySelector('#digital-forensics-lightbox');
+const galleryTriggers = document.querySelectorAll('.gallery-trigger');
+
+const trapDialogFocus = (dialog, event) => {
+  if (event.key !== 'Tab') return;
+  const focusable = [...dialog.querySelectorAll('button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])')];
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+};
+
+if (projectModal && projectModalOpen && projectModalClose) {
+  projectModalOpen.addEventListener('click', () => {
+    document.body.classList.add('modal-open');
+    projectModal.showModal();
+    projectModalClose.focus();
+  });
+
+  projectModalClose.addEventListener('click', () => projectModal.close());
+  projectModal.addEventListener('click', (event) => {
+    if (event.target === projectModal) projectModal.close();
+  });
+  projectModal.addEventListener('keydown', (event) => trapDialogFocus(projectModal, event));
+  projectModal.addEventListener('close', () => {
+    document.body.classList.remove('modal-open');
+    projectModalOpen.focus();
+  });
+}
+
+if (lightbox && galleryTriggers.length) {
+  const lightboxImage = lightbox.querySelector('.lightbox-image');
+  const lightboxCaption = lightbox.querySelector('#lightbox-caption');
+  const lightboxClose = lightbox.querySelector('.lightbox-close');
+  let activeTrigger = null;
+
+  galleryTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      activeTrigger = trigger;
+      lightboxImage.src = trigger.dataset.image;
+      lightboxImage.alt = trigger.dataset.alt;
+      lightboxCaption.textContent = trigger.dataset.caption;
+      lightbox.showModal();
+      lightboxClose.focus();
+    });
+  });
+
+  lightboxClose.addEventListener('click', () => lightbox.close());
+
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+
+  lightbox.addEventListener('keydown', (event) => trapDialogFocus(lightbox, event));
+
+  lightbox.addEventListener('close', () => {
+    lightboxImage.removeAttribute('src');
+    if (activeTrigger) activeTrigger.focus();
+  });
+}
