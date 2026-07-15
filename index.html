@@ -256,13 +256,9 @@
           </article>
           <article class="card project-card">
             <div class="project-top"><span class="project-index">07</span></div>
-            <h3>Cryptography Lab</h3>
-            <ul class="tech-list" aria-label="Cryptography Lab tools"><li>OpenSSL</li><li>PKI</li><li>Encryption</li></ul>
-            <ul class="project-details">
-              <li>Generated public and private key pairs and digital certificates.</li>
-              <li>Implemented symmetric and asymmetric encryption scenarios.</li>
-              <li>Demonstrated secure communication concepts involving hashing and public key infrastructure.</li>
-            </ul>
+            <h3>Cryptography &amp; Public Key Encryption</h3>
+            <ul class="tech-list" aria-label="Cryptography and Public Key Encryption technologies"><li>OpenSSL</li><li>RSA</li><li>PKI</li></ul>
+            <button class="button button-secondary project-view-button" id="open-cryptography-project" type="button" data-modal-target="cryptography-project">View Project</button>
           </article>
         </div>
       </div>
@@ -323,6 +319,67 @@
               </figure>
         </div>
         <p class="gallery-note">Screenshots are from a simulated academic forensic investigation. Identifying information has been removed or sanitized.</p>
+      </div>
+    </dialog>
+
+    <dialog class="project-modal" id="cryptography-project" aria-labelledby="cryptography-modal-title" data-project-modal>
+      <button class="modal-close project-modal-close" type="button" aria-label="Close Cryptography and Public Key Encryption project">×</button>
+      <div class="project-modal-content">
+        <p class="section-kicker">Featured Project</p>
+        <h2 id="cryptography-modal-title">Cryptography &amp; Public Key Encryption</h2>
+        <dl class="forensics-facts" aria-label="Cryptography lab details">
+          <div><dt>Lab Type</dt><dd>Asymmetric Encryption</dd></div>
+          <div><dt>Workflow</dt><dd>RSA Encryption Workflow</dd></div>
+          <div><dt>Tools</dt><dd>OpenSSL, RSA, PKI</dd></div>
+        </dl>
+        <p class="project-summary">Generated a 4096-bit RSA key pair using OpenSSL and demonstrated secure public-key encryption and decryption of sensitive data. Created public and private keys, encrypted confidential information, verified successful decryption, and documented the complete cryptographic workflow.</p>
+        <ul class="project-details">
+          <li>Generated 4096-bit RSA public and private key pairs using OpenSSL.</li>
+          <li>Encrypted sensitive files using asymmetric cryptography.</li>
+          <li>Successfully decrypted encrypted files to validate data integrity.</li>
+          <li>Demonstrated practical implementation of Public Key Infrastructure concepts.</li>
+        </ul>
+        <section class="forensics-skills" aria-labelledby="cryptography-skills-title">
+          <h3 id="cryptography-skills-title">Key Skills Demonstrated</h3>
+          <ul class="forensics-skill-list">
+            <li>OpenSSL</li>
+            <li>RSA</li>
+            <li>Public Key Infrastructure (PKI)</li>
+            <li>Asymmetric Encryption</li>
+            <li>Key Pair Generation</li>
+            <li>Data Encryption</li>
+            <li>Data Decryption</li>
+            <li>PowerShell</li>
+            <li>Command Line</li>
+          </ul>
+        </section>
+        <div class="forensics-gallery" aria-label="Cryptography and public key encryption screenshots">
+          <figure class="gallery-item">
+            <button class="gallery-trigger" type="button" data-image="assets/images/projects/cryptography/rsa-private-key.png" data-alt="OpenSSL terminal output showing generation of a 4096-bit RSA private key" data-caption="RSA Private Key Generation — Generated a 4096-bit RSA private key using OpenSSL." aria-label="Open larger image: RSA Private Key Generation">
+              <img src="assets/images/projects/cryptography/rsa-private-key.png" alt="OpenSSL terminal output showing generation of a 4096-bit RSA private key" width="1650" height="910" loading="lazy">
+            </button>
+            <figcaption><strong>RSA Private Key Generation</strong><span>Generated a 4096-bit RSA private key using OpenSSL.</span></figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <button class="gallery-trigger" type="button" data-image="assets/images/projects/cryptography/rsa-public-key.png" data-alt="OpenSSL terminal output showing creation of an RSA public key from the private key" data-caption="Public Key Creation — Derived a public key from the RSA private key for secure encryption." aria-label="Open larger image: Public Key Creation">
+              <img src="assets/images/projects/cryptography/rsa-public-key.png" alt="OpenSSL terminal output showing creation of an RSA public key from the private key" width="1650" height="902" loading="lazy">
+            </button>
+            <figcaption><strong>Public Key Creation</strong><span>Derived a public key from the RSA private key for secure encryption.</span></figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <button class="gallery-trigger" type="button" data-image="assets/images/projects/cryptography/file-encryption.png" data-alt="OpenSSL terminal commands encrypting simulated sensitive financial data with an RSA public key" data-caption="File Encryption — Encrypted sensitive financial data using the RSA public key." aria-label="Open larger image: File Encryption">
+              <img src="assets/images/projects/cryptography/file-encryption.png" alt="OpenSSL terminal commands encrypting simulated sensitive financial data with an RSA public key" width="1650" height="634" loading="lazy">
+            </button>
+            <figcaption><strong>File Encryption</strong><span>Encrypted sensitive financial data using the RSA public key.</span></figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <button class="gallery-trigger" type="button" data-image="assets/images/projects/cryptography/file-decryption.png" data-alt="OpenSSL terminal commands decrypting an encrypted file and displaying the restored original data" data-caption="File Decryption — Successfully decrypted the encrypted file using the RSA private key and verified the original data." aria-label="Open larger image: File Decryption">
+              <img src="assets/images/projects/cryptography/file-decryption.png" alt="OpenSSL terminal commands decrypting an encrypted file and displaying the restored original data" width="1650" height="592" loading="lazy">
+            </button>
+            <figcaption><strong>File Decryption</strong><span>Successfully decrypted the encrypted file using the RSA private key and verified the original data.</span></figcaption>
+          </figure>
+        </div>
+        <p class="gallery-note">Screenshots are from a simulated academic cryptography lab completed as coursework.</p>
       </div>
     </dialog>
 

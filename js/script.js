@@ -72,9 +72,7 @@ if ('IntersectionObserver' in window) {
   trackedSections.forEach((section) => sectionObserver.observe(section));
 }
 
-const projectModal = document.querySelector('#digital-forensics-project');
-const projectModalOpen = document.querySelector('#open-forensics-project');
-const projectModalClose = projectModal?.querySelector('.project-modal-close');
+const projectModals = document.querySelectorAll('.project-modal');
 const lightbox = document.querySelector('#digital-forensics-lightbox');
 const galleryTriggers = document.querySelectorAll('.gallery-trigger');
 
@@ -94,7 +92,13 @@ const trapDialogFocus = (dialog, event) => {
   }
 };
 
-if (projectModal && projectModalOpen && projectModalClose) {
+projectModals.forEach((projectModal) => {
+  const projectModalClose = projectModal.querySelector('.project-modal-close');
+  const projectModalOpen = document.querySelector(`[data-modal-target="${projectModal.id}"]`)
+    || (projectModal.id === 'digital-forensics-project' ? document.querySelector('#open-forensics-project') : null);
+
+  if (!projectModalClose || !projectModalOpen) return;
+
   projectModalOpen.addEventListener('click', () => {
     document.body.classList.add('modal-open');
     projectModal.showModal();
@@ -110,7 +114,7 @@ if (projectModal && projectModalOpen && projectModalClose) {
     document.body.classList.remove('modal-open');
     projectModalOpen.focus();
   });
-}
+});
 
 if (lightbox && galleryTriggers.length) {
   const lightboxImage = lightbox.querySelector('.lightbox-image');
