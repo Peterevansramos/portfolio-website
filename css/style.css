@@ -109,10 +109,6 @@ p { margin: 0 0 1.25rem; }
 .meta-label { margin-bottom: .35rem; color: var(--blue-light); font-weight: 700; }
 .education-card h3 { margin-bottom: 1rem; font-size: clamp(1.25rem, 2vw, 1.65rem); }
 .education-date { margin: 0; color: var(--cyan); font-weight: 750; }
-.badge { display: inline-flex; align-items: center; padding: .28rem .62rem; border-radius: 999px; font-size: .68rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
-.badge-progress { color: #99f1e7; border: 1px solid rgba(99,224,221,.25); background: rgba(99,224,221,.09); }
-.badge-progress::before { content: ""; width: .38rem; height: .38rem; margin-right: .42rem; border-radius: 50%; background: currentColor; }
-.badge-planned { color: var(--blue-light); border: 1px solid rgba(85,169,255,.25); background: rgba(85,169,255,.09); }
 .experience-timeline { max-width: 950px; }
 .timeline-item { position: relative; margin-left: 1rem; padding: .5rem 0 4rem 2.5rem; border-left: 1px solid rgba(85,169,255,.35); }
 .timeline-item:last-child { padding-bottom: 0; }
@@ -126,14 +122,16 @@ p { margin: 0 0 1.25rem; }
 .check-list { list-style: none; margin: 1.6rem 0 0; padding: 0; }
 .check-list li { position: relative; padding: .55rem 0 .55rem 1.8rem; }
 .check-list li::before { content: "›"; position: absolute; left: .3rem; color: var(--cyan); font-size: 1.25rem; font-weight: 900; }
-.project-card { display: flex; min-height: 340px; flex-direction: column; }
-.project-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+.project-card { display: flex; min-height: 390px; height: 100%; flex-direction: column; }
+.project-top { display: flex; align-items: center; margin-bottom: 1.4rem; }
 .project-index { color: var(--slate-400); font-family: ui-monospace, monospace; font-size: .78rem; }
 .project-card h3 { margin-bottom: .9rem; font-size: 1.4rem; }
-.project-card p { flex: 1; }
-.tech-list { margin-top: 1rem; }
+.project-card .tech-list { margin: 0 0 1.4rem; }
 .tech-list li { border: 0; padding: 0; color: var(--blue-light); background: none; font-family: ui-monospace, monospace; font-size: .75rem; }
 .tech-list li:not(:last-child)::after { content: " /"; color: var(--slate-400); }
+.project-details { flex: 1; margin: 0; padding: 0; list-style: none; }
+.project-details li { position: relative; padding: .38rem 0 .38rem 1.2rem; }
+.project-details li::before { content: "›"; position: absolute; left: 0; color: var(--cyan); font-weight: 900; }
 .resume-section { padding-block: 5rem; }
 .resume-callout { display: flex; align-items: center; justify-content: space-between; gap: 3rem; padding: 3rem; border: 1px solid rgba(85,169,255,.32); border-radius: var(--radius); background: linear-gradient(120deg, rgba(85,169,255,.13), rgba(99,224,221,.035)); }
 .resume-callout h2 { margin-bottom: .65rem; font-size: clamp(2rem, 4vw, 3rem); }
