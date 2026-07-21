@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header class="site-header" id="top">
+  <header class="site-header">
     <nav class="nav container" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="Peter Evans-Ramos, home">
         <span class="brand-mark" aria-hidden="true">PE</span>
@@ -116,13 +116,12 @@
         <p class="section-kicker">03 / Credentials</p>
         <h2 id="certifications-title">Certifications</h2>
         <div class="cert-grid">
-          <article class="cert-card"><span class="cert-icon" aria-hidden="true">A+</span><div><p>CompTIA</p><h3>A+</h3><span class="cert-validity">Valid through 2029</span></div></article>
-          <article class="cert-card"><span class="cert-icon" aria-hidden="true">N+</span><div><p>CompTIA</p><h3>Network+</h3><span class="cert-validity">Valid through 2029</span></div></article>
-          <article class="cert-card"><span class="cert-icon" aria-hidden="true">S+</span><div><p>CompTIA</p><h3>Security+</h3><span class="cert-validity">Valid through 2029</span></div></article>
-          <article class="cert-card"><span class="cert-icon" aria-hidden="true">P+</span><div><p>CompTIA</p><h3>Project+</h3><span class="cert-validity">Valid through 2029</span></div></article>
-          <article class="cert-card"><span class="cert-icon" aria-hidden="true">IT</span><div><p>ITIL</p><h3>ITIL Foundation</h3><span class="cert-validity">Valid through 2028</span></div></article>
-          <article class="cert-card"><span class="cert-icon cert-icon-wide" aria-hidden="true">PA</span><div><p>Palo Alto Networks</p><h3>Cybersecurity Foundation</h3></div></article>
-          <article class="cert-card"><span class="cert-icon cert-icon-wide" aria-hidden="true">PA</span><div><p>Palo Alto Networks</p><h3>CyberOps Associate</h3></div></article>
+          <article class="cert-card"><span class="cert-badge" aria-hidden="true"><img src="assets/images/certifications/comptia-a-plus.svg" alt=""></span><div><p>CompTIA</p><h3>A+</h3><span class="cert-validity">Valid through 2029</span></div></article>
+          <article class="cert-card"><span class="cert-badge" aria-hidden="true"><img src="assets/images/certifications/comptia-network-plus.svg" alt=""></span><div><p>CompTIA</p><h3>Network+</h3><span class="cert-validity">Valid through 2029</span></div></article>
+          <article class="cert-card"><span class="cert-badge" aria-hidden="true"><img src="assets/images/certifications/comptia-security-plus.svg" alt=""></span><div><p>CompTIA</p><h3>Security+</h3><span class="cert-validity">Valid through 2029</span></div></article>
+          <article class="cert-card"><span class="cert-badge" aria-hidden="true"><img src="assets/images/certifications/comptia-project-plus.svg" alt=""></span><div><p>CompTIA</p><h3>Project+</h3><span class="cert-validity">Valid through 2029</span></div></article>
+          <article class="cert-card"><span class="cert-badge" aria-hidden="true"><img src="assets/images/certifications/itil-foundation.png" alt=""></span><div><p>ITIL</p><h3>ITIL Foundation</h3><span class="cert-validity">Valid through 2028</span></div></article>
+          <article class="cert-card"><span class="cert-badge" aria-hidden="true"><img src="assets/images/certifications/lpi-linux-essentials.png" alt=""></span><div><p>Linux Professional Institute (LPI)</p><h3>Linux Essentials</h3><span class="cert-validity">Earned July 2026</span></div></article>
         </div>
       </div>
     </section>
@@ -206,6 +205,12 @@
           </article>
           <article class="card project-card">
             <div class="project-top"><span class="project-index">02</span></div>
+            <h3>Cryptography &amp; Public Key Encryption</h3>
+            <ul class="tech-list" aria-label="Cryptography and Public Key Encryption technologies"><li>OpenSSL</li><li>RSA</li><li>PKI</li></ul>
+            <button class="button button-secondary project-view-button" id="open-cryptography-project" type="button" data-modal-target="cryptography-project">View Project</button>
+          </article>
+          <article class="card project-card">
+            <div class="project-top"><span class="project-index">03</span></div>
             <h3>Linux Administration Lab</h3>
             <ul class="tech-list" aria-label="Linux Administration Lab tools"><li>Ubuntu</li><li>Bash</li><li>Linux CLI</li></ul>
             <ul class="project-details">
@@ -215,7 +220,7 @@
             </ul>
           </article>
           <article class="card project-card">
-            <div class="project-top"><span class="project-index">03</span></div>
+            <div class="project-top"><span class="project-index">04</span></div>
             <h3>Network Security and Packet Analysis Lab</h3>
             <ul class="tech-list" aria-label="Network Security and Packet Analysis Lab tools"><li>Wireshark</li><li>OpenSSL</li><li>Networking utilities</li></ul>
             <ul class="project-details">
@@ -225,7 +230,7 @@
             </ul>
           </article>
           <article class="card project-card">
-            <div class="project-top"><span class="project-index">04</span></div>
+            <div class="project-top"><span class="project-index">05</span></div>
             <h3>Information Security Risk Assessment</h3>
             <ul class="tech-list" aria-label="Information Security Risk Assessment tools"><li>NIST security frameworks</li><li>Risk assessment</li><li>Security controls</li></ul>
             <ul class="project-details">
@@ -235,7 +240,7 @@
             </ul>
           </article>
           <article class="card project-card">
-            <div class="project-top"><span class="project-index">05</span></div>
+            <div class="project-top"><span class="project-index">06</span></div>
             <h3>Incident Response Project</h3>
             <ul class="tech-list" aria-label="Incident Response Project tools"><li>Incident response</li><li>Threat analysis</li><li>Technical documentation</li></ul>
             <ul class="project-details">
@@ -245,7 +250,7 @@
             </ul>
           </article>
           <article class="card project-card">
-            <div class="project-top"><span class="project-index">06</span></div>
+            <div class="project-top"><span class="project-index">07</span></div>
             <h3>Phishing Awareness Simulation</h3>
             <ul class="tech-list" aria-label="Phishing Awareness Simulation tools"><li>Security awareness</li><li>Phishing analysis</li><li>Risk mitigation</li></ul>
             <ul class="project-details">
@@ -253,12 +258,6 @@
               <li>Analyzed simulation results and recommended improvements to security awareness training.</li>
               <li>Documented findings and mitigation recommendations.</li>
             </ul>
-          </article>
-          <article class="card project-card">
-            <div class="project-top"><span class="project-index">07</span></div>
-            <h3>Cryptography &amp; Public Key Encryption</h3>
-            <ul class="tech-list" aria-label="Cryptography and Public Key Encryption technologies"><li>OpenSSL</li><li>RSA</li><li>PKI</li></ul>
-            <button class="button button-secondary project-view-button" id="open-cryptography-project" type="button" data-modal-target="cryptography-project">View Project</button>
           </article>
         </div>
       </div>

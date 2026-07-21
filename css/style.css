@@ -98,9 +98,13 @@ p { margin: 0 0 1.25rem; }
 .tag-list small { margin-left: .3rem; color: var(--cyan); font-size: .66rem; font-weight: 750; text-transform: uppercase; }
 .tool-group-label { margin: 1.4rem 0 .65rem; color: var(--cyan); font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .learning-list li { border-color: rgba(99,224,221,.28); }
-.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 1rem; }
-.cert-card { display: flex; min-height: 145px; align-items: center; gap: 1rem; padding: 1.45rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--navy-850); }
-.cert-icon { display: grid; flex: 0 0 3.25rem; aspect-ratio: 1; place-items: center; border: 1px solid rgba(99,224,221,.35); border-radius: 50%; color: var(--cyan); font-family: ui-monospace, monospace; font-size: .82rem; font-weight: 800; }
+.cert-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 1rem; }
+.cert-card { display: flex; min-height: 160px; height: 100%; align-items: center; gap: 1rem; padding: 1.45rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--navy-850); transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
+.cert-card:hover { border-color: rgba(85,169,255,.5); box-shadow: 0 12px 30px rgba(42,137,229,.1); transform: translateY(-3px); }
+.cert-badge { display: grid; flex: 0 0 4.5rem; width: 4.5rem; height: 4.5rem; place-items: center; }
+.cert-badge img { display: block; width: 100%; height: 100%; object-fit: contain; transition: transform .22s ease; }
+.cert-card:hover .cert-badge img { transform: scale(1.04); }
+.cert-card > div { min-width: 0; }
 .cert-card p { margin: 0 0 .3rem; color: var(--slate-400); font-size: .72rem; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
 .cert-card h3 { font-size: 1.05rem; }
 .cert-validity { display: block; margin-top: .45rem; color: var(--slate-400); font-size: .76rem; }
@@ -191,6 +195,7 @@ p { margin: 0 0 1.25rem; }
 @media (max-width: 900px) {
   .hero-layout { grid-template-columns: 1fr 230px; gap: 3rem; }
   .contact-layout { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 720px) {
@@ -208,6 +213,7 @@ p { margin: 0 0 1.25rem; }
   .profile-monogram { width: min(65vw, 280px); margin-inline: auto; aspect-ratio: 1; border-radius: 50%; }
   .monogram-frame { width: 8rem; }
   .skill-grid, .project-grid { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: 1fr; }
   .forensics-gallery { grid-template-columns: 1fr; }
   .forensics-facts { grid-template-columns: 1fr; }
   .project-modal-content { padding: 3.5rem 1.25rem 1.5rem; }
