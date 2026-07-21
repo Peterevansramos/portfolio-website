@@ -36,7 +36,9 @@ window.addEventListener('resize', () => {
 document.querySelector('#current-year').textContent = new Date().getFullYear();
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const revealItems = document.querySelectorAll('.reveal');
+const revealCards = document.querySelectorAll('.skill-card, .cert-card, .project-card');
+revealCards.forEach((item) => item.classList.add('reveal-item'));
+const revealItems = document.querySelectorAll('.reveal, .reveal-item');
 
 if (reducedMotion || !('IntersectionObserver' in window)) {
   revealItems.forEach((item) => item.classList.add('is-visible'));
@@ -49,7 +51,48 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
       }
     });
   }, { threshold: 0.12 });
+  document.documentElement.classList.add('reveal-ready');
   revealItems.forEach((item) => revealObserver.observe(item));
+}
+
+const projectCards = document.querySelectorAll('.project-card');
+const tiltSupported = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+if (tiltSupported && !reducedMotion) {
+  const maximumTilt = 3.5;
+
+  projectCards.forEach((card) => {
+    let tiltFrame;
+    let pointerIsInside = false;
+
+    card.addEventListener('pointerenter', () => {
+      pointerIsInside = true;
+      card.classList.add('is-tilting');
+    });
+
+    card.addEventListener('pointermove', (event) => {
+      const bounds = card.getBoundingClientRect();
+      const horizontalPosition = (event.clientX - bounds.left) / bounds.width - .5;
+      const verticalPosition = (event.clientY - bounds.top) / bounds.height - .5;
+      const rotateX = verticalPosition * maximumTilt * -2;
+      const rotateY = horizontalPosition * maximumTilt * 2;
+
+      cancelAnimationFrame(tiltFrame);
+      tiltFrame = requestAnimationFrame(() => {
+        if (!pointerIsInside) return;
+        card.style.setProperty('--tilt-x', `${rotateX.toFixed(2)}deg`);
+        card.style.setProperty('--tilt-y', `${rotateY.toFixed(2)}deg`);
+      });
+    });
+
+    card.addEventListener('pointerleave', () => {
+      pointerIsInside = false;
+      cancelAnimationFrame(tiltFrame);
+      card.classList.remove('is-tilting');
+      card.style.setProperty('--tilt-x', '0deg');
+      card.style.setProperty('--tilt-y', '0deg');
+    });
+  });
 }
 
 const trackedSections = [...document.querySelectorAll('main section[id]')];
