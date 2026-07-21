@@ -36,6 +36,115 @@ window.addEventListener('resize', () => {
 document.querySelector('#current-year').textContent = new Date().getFullYear();
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const hero = document.querySelector('.hero');
+const heroNetwork = document.querySelector('.hero-network');
+
+if (hero && !reducedMotion) {
+  hero.classList.add('hero-entrance-ready');
+  requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add('hero-entered')));
+  window.setTimeout(() => hero.classList.add('hero-motion-ready'), 950);
+}
+
+if (heroNetwork && !reducedMotion) {
+  const networkContext = heroNetwork.getContext('2d');
+  const nodes = [];
+  const mobileQuery = window.matchMedia('(max-width: 720px)');
+  const tabletQuery = window.matchMedia('(max-width: 1000px)');
+  let networkFrame = 0;
+  let resizeFrame = 0;
+  let canvasWidth = 0;
+  let canvasHeight = 0;
+  let pixelRatio = 1;
+
+  const createNetwork = () => {
+    const bounds = heroNetwork.getBoundingClientRect();
+    canvasWidth = Math.max(1, Math.round(bounds.width));
+    canvasHeight = Math.max(1, Math.round(bounds.height));
+    pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+    heroNetwork.width = Math.round(canvasWidth * pixelRatio);
+    heroNetwork.height = Math.round(canvasHeight * pixelRatio);
+    networkContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+    const nodeCount = mobileQuery.matches ? 16 : tabletQuery.matches ? 23 : 32;
+    nodes.length = nodeCount;
+
+    for (let index = 0; index < nodeCount; index += 1) {
+      nodes[index] = {
+        x: Math.random() * canvasWidth,
+        y: Math.random() * canvasHeight,
+        velocityX: (Math.random() - .5) * .12,
+        velocityY: (Math.random() - .5) * .12,
+        radius: 1 + Math.random() * .65
+      };
+    }
+  };
+
+  const drawNetwork = () => {
+    networkContext.clearRect(0, 0, canvasWidth, canvasHeight);
+    networkContext.lineWidth = 1;
+    networkContext.strokeStyle = 'rgb(85, 169, 255)';
+    const connectionDistance = mobileQuery.matches ? 105 : 150;
+    const connectionLimit = connectionDistance * connectionDistance;
+
+    for (let firstIndex = 0; firstIndex < nodes.length; firstIndex += 1) {
+      const node = nodes[firstIndex];
+      node.x += node.velocityX;
+      node.y += node.velocityY;
+
+      if (node.x < 0 || node.x > canvasWidth) node.velocityX *= -1;
+      if (node.y < 0 || node.y > canvasHeight) node.velocityY *= -1;
+
+      for (let secondIndex = firstIndex + 1; secondIndex < nodes.length; secondIndex += 1) {
+        const otherNode = nodes[secondIndex];
+        const distanceX = node.x - otherNode.x;
+        const distanceY = node.y - otherNode.y;
+        const distanceSquared = distanceX * distanceX + distanceY * distanceY;
+
+        if (distanceSquared < connectionLimit) {
+          networkContext.globalAlpha = .11 * (1 - distanceSquared / connectionLimit);
+          networkContext.beginPath();
+          networkContext.moveTo(node.x, node.y);
+          networkContext.lineTo(otherNode.x, otherNode.y);
+          networkContext.stroke();
+        }
+      }
+
+      networkContext.globalAlpha = .32;
+      networkContext.fillStyle = 'rgb(99, 224, 221)';
+      networkContext.beginPath();
+      networkContext.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+      networkContext.fill();
+    }
+
+    networkContext.globalAlpha = 1;
+
+    networkFrame = requestAnimationFrame(drawNetwork);
+  };
+
+  const startNetwork = () => {
+    if (!networkFrame && !document.hidden) networkFrame = requestAnimationFrame(drawNetwork);
+  };
+
+  const stopNetwork = () => {
+    cancelAnimationFrame(networkFrame);
+    networkFrame = 0;
+  };
+
+  createNetwork();
+  startNetwork();
+
+  window.addEventListener('resize', () => {
+    cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(createNetwork);
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopNetwork();
+    else startNetwork();
+  });
+}
+
 const revealCards = document.querySelectorAll('.skill-card, .cert-card, .project-card');
 revealCards.forEach((item) => item.classList.add('reveal-item'));
 const revealItems = document.querySelectorAll('.reveal, .reveal-item');
