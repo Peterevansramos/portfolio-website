@@ -167,9 +167,12 @@ p { margin: 0 0 1.25rem; }
 .cert-card p { margin: 0 0 .3rem; color: var(--slate-400); font-size: .72rem; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
 .cert-card h3 { font-size: 1.05rem; }
 .cert-validity { display: block; margin-top: .45rem; color: var(--slate-400); font-size: .76rem; }
-.education-card { display: grid; grid-template-columns: 125px 1fr; align-items: center; gap: 2rem; max-width: 850px; padding: 2rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--navy-850); }
-.education-mark { display: grid; width: 100%; aspect-ratio: 1; place-items: center; border: 1px solid rgba(85,169,255,.35); border-radius: 16px; color: var(--blue-light); background: rgba(85,169,255,.07); font-size: 1.5rem; font-weight: 850; }
+.education-card { display: grid; grid-template-columns: 165px 1fr; align-items: center; gap: 2rem; max-width: 850px; padding: 2rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--navy-850); }
+.education-mark { display: grid; width: 100%; min-height: 110px; padding: 22px; place-items: center; border: 1px solid rgba(85,169,255,.35); border-radius: 16px; background: rgba(85,169,255,.07); box-shadow: inset 0 0 24px rgba(42,137,229,.05); }
+.education-mark img { display: block; width: 100%; height: 100%; max-height: 66px; object-fit: contain; filter: brightness(0) saturate(100%) invert(88%) sepia(20%) saturate(1094%) hue-rotate(128deg) brightness(96%) contrast(91%) drop-shadow(0 0 8px rgba(99,224,221,.15)); transform: scale(1.12); transform-origin: center; }
 .meta-label { margin-bottom: .35rem; color: var(--blue-light); font-weight: 700; }
+.education-link { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: .2em; transition: color .2s ease, text-decoration-color .2s ease; }
+.education-link:hover { color: var(--cyan); text-decoration-color: currentColor; }
 .education-card h3 { margin-bottom: 1rem; font-size: clamp(1.25rem, 2vw, 1.65rem); }
 .education-date { margin: 0; color: var(--cyan); font-weight: 750; }
 .experience-timeline { max-width: 950px; }
@@ -288,7 +291,8 @@ p { margin: 0 0 1.25rem; }
   .lightbox-content { padding-inline: .65rem; }
   .experience-heading, .resume-callout { align-items: flex-start; flex-direction: column; }
   .resume-callout { padding: 2rem; }
-  .education-card { grid-template-columns: 85px 1fr; gap: 1.2rem; padding: 1.4rem; }
+  .education-card { grid-template-columns: 145px 1fr; gap: 1.2rem; padding: 1.4rem; }
+  .education-mark { min-height: 96px; padding: 20px; }
   .footer-layout { align-items: flex-start; flex-direction: column; }
 }
 
@@ -299,7 +303,7 @@ p { margin: 0 0 1.25rem; }
   .button-group { align-items: stretch; flex-direction: column; }
   .button-group .button { width: 100%; }
   .education-card { grid-template-columns: 1fr; }
-  .education-mark { width: 75px; }
+  .education-mark { width: min(165px, 100%); min-height: 105px; padding: 22px; }
   .timeline-item { margin-left: .4rem; padding-left: 1.5rem; }
   .contact-list a { grid-template-columns: 1fr; gap: .25rem; }
 }
